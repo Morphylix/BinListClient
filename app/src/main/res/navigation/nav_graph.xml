@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/binInputFragment">
+
+    <fragment
+        android:id="@+id/binInputFragment"
+        android:name="com.morphylix.android.binlist.presentation.bin_input.BinInputFragment"
+        android:label="BinInputFragment" >
+        <action
+            android:id="@+id/action_binInputFragment_to_binDetailsFragment"
+            app:destination="@id/binDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/binDetailsFragment"
+        android:name="com.morphylix.android.binlist.presentation.bin_details.BinDetailsFragment"
+        android:label="BinDetailsFragment" >
+        <argument
+            android:name="bin"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_binDetailsFragment_to_binInputFragment"
+            app:destination="@id/binInputFragment" />
+    </fragment>
+</navigation>

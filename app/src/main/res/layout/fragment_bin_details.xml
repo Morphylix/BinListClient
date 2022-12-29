@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/bin_details_progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/data_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:constraint_referenced_ids="
+        bin_check_header_image_view,
+        current_card_bin_text_view,
+        scheme_network_text_view,
+        scheme_network_data_text_view,
+        brand_text_view,
+        brand_data_text_view,
+        card_number_text_view,
+        card_length_text_view,
+        card_length_data_text_view,
+        card_luhn_text_view,
+        card_luhn_data_text_view,
+        card_type_text_view,
+        card_type_data_text_view,
+        prepaid_text_view,
+        prepaid_data_text_view,
+        country_text_view,
+        country_emoji_text_view,
+        country_data_text_view,
+        coordinates_text_view,
+        bank_text_view,
+        bank_name_and_city_data_text_view,
+        bank_url_text_view,
+        bank_phone_text_view" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/bin_check_header_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/binlist_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/current_card_bin_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bin_check_header_image_view"
+            tools:text="5564 5746"
+            android:textSize="30sp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/scheme_network_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/scheme_network"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_card_bin_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/scheme_network_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheme_network_text_view"
+            tools:text="Visa" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/brand_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/brand"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheme_network_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/brand_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brand_text_view"
+            tools:text="Visa/Dancort" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_number_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/card_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brand_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_length_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/length"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_number_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_luhn_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/luhn"
+            app:layout_constraintStart_toEndOf="@id/card_length_text_view"
+            app:layout_constraintTop_toBottomOf="@id/card_number_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_length_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_length_text_view"
+            tools:text="16" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_luhn_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/card_luhn_text_view"
+            app:layout_constraintTop_toBottomOf="@id/card_length_text_view"
+            tools:text="Yes" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_length_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/card_type_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_type_text_view"
+            tools:text="Credit" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/prepaid_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/prepaid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_type_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/prepaid_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prepaid_text_view"
+            tools:text="Yes" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/country"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prepaid_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_emoji_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_text_view"
+            tools:text="DK" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/country_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/country_emoji_text_view"
+            app:layout_constraintTop_toBottomOf="@id/country_text_view"
+            tools:text="Denmark" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/coordinates_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/coordinates"
+            android:textColor="@color/design_default_color_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_data_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@id/coordinates_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/bank"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_name_and_city_data_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@id/bank_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/bank_and_city"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_url_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_primary"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@id/bank_name_and_city_data_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="www.jyskebank.dk"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/bank_phone_text_view"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_primary"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintTop_toBottomOf="@id/bank_url_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="+4580797954"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
